@@ -1,0 +1,2260 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phiếu Học Tập Tương Tác: Tinh Bột và Cellulose - Hóa Học 12</title>
+  <!-- Google Fonts: Roboto & Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary-grad: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7928ca 100%);
+      --bg-page: #f4f6fb;
+      --card-bg: #ffffff;
+      --text-main: #2d3748;
+      --text-muted: #718096;
+      --success-color: #10b981;
+      --success-bg: #ecfdf5;
+      --error-color: #ef4444;
+      --error-bg: #fef2f2;
+      --warning-color: #f59e0b;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    .pht-header {
+      background: var(--primary-grad);
+      color: #fff;
+      padding: 30px 20px 25px;
+      border-radius: 0 0 24px 24px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .header-top {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .badge-label {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .title-main {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      line-height: 1.25;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .title-sub {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
+
+    .btn-admin {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-admin:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: -20px auto 0;
+      padding: 0 15px;
+    }
+
+    .student-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 15px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .form-control {
+      padding: 10px 14px;
+      border: 1.5px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      border-color: #2a5298;
+      box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      margin-bottom: 25px;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-header-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+
+    .card-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-score {
+      font-size: 0.85rem;
+      font-weight: 700;
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .objective-list {
+      list-style-type: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .objective-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: #475569;
+    }
+
+    .objective-list i {
+      color: #2563eb;
+      margin-top: 4px;
+    }
+
+    .q-item {
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid #eef2f6;
+      background: #fafbfc;
+      margin-bottom: 16px;
+      transition: all 0.2s;
+    }
+
+    .q-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      color: #1e293b;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 10px;
+    }
+
+    .opt-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.93rem;
+      transition: all 0.2s;
+    }
+
+    .opt-label:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    .opt-label input[type="radio"] {
+      accent-color: #2563eb;
+      transform: scale(1.15);
+    }
+
+    .fill-sentence {
+      line-height: 2.2;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      padding: 12px 16px;
+      background: #f8fafc;
+      border-left: 4px solid #3b82f6;
+      border-radius: 4px 8px 8px 4px;
+    }
+
+    .fill-select {
+      display: inline-block;
+      padding: 4px 10px;
+      border: 2px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1e293b;
+      background: #ffffff;
+      outline: none;
+      cursor: pointer;
+      margin: 0 4px;
+      transition: border-color 0.2s;
+    }
+
+    .fill-select:focus {
+      border-color: #2563eb;
+    }
+
+    .tf-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .tf-table th, .tf-table td {
+      padding: 12px 14px;
+      border: 1px solid #e2e8f0;
+      font-size: 0.93rem;
+    }
+
+    .tf-table th {
+      background: #f1f5f9;
+      font-weight: 700;
+      text-align: center;
+      color: #334155;
+    }
+
+    .tf-col-choice {
+      width: 75px;
+      text-align: center;
+    }
+
+    .tf-radio {
+      accent-color: #2563eb;
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .matching-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .matching-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .match-col-header {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .match-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .match-target-desc {
+      background: #fff;
+      border: 1px dashed #cbd5e1;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-size: 0.92rem;
+    }
+
+    .dnd-container {
+      margin-top: 12px;
+    }
+
+    .dnd-hint {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin-bottom: 14px;
+      background: #eff6ff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dnd-pool {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 14px;
+      background: #f8fafc;
+      border: 2px dashed #cbd5e1;
+      border-radius: 10px;
+      min-height: 120px;
+      margin-bottom: 18px;
+      align-items: center;
+    }
+
+    .dnd-item {
+      width: 140px;
+      background: #fff;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      cursor: grab;
+      box-shadow: var(--shadow-sm);
+      user-select: none;
+      transition: all 0.2s ease;
+      touch-action: none;
+    }
+
+    .dnd-item.selected {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+      transform: scale(1.04);
+    }
+
+    .dnd-item.touch-dragging {
+      opacity: 0.85;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: scale(1.08);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .dnd-item:active {
+      cursor: grabbing;
+    }
+
+    .dnd-item img {
+      width: 100%;
+      height: 85px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+      margin-bottom: 6px;
+      background: #e2e8f0;
+      pointer-events: none;
+    }
+
+    .dnd-item-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.2;
+      pointer-events: none;
+    }
+
+    .dropzone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .dropzone {
+      background: #ffffff;
+      border: 2px dashed #94a3b8;
+      border-radius: 10px;
+      padding: 12px;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+      transition: background-color 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+
+    .dropzone.dragover {
+      background-color: #e0e7ff;
+      border-color: #4338ca;
+    }
+
+    .dropzone-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #334155;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .video-grid-dual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .video-grid-dual {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .video-sub-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-sub-title {
+      font-weight: 700;
+      font-size: 0.96rem;
+      color: #1e293b;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 12px;
+      position: relative;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: 240px;
+      object-fit: contain;
+      background: #000;
+      display: block;
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 240px;
+      border: none;
+      display: block;
+    }
+
+    .toast-notification {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      background: #065f46;
+      color: #ffffff;
+      padding: 14px 22px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 9999;
+      transform: translateY(-80px);
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .toast-notification.show {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .video-helper-note {
+      font-size: 0.86rem;
+      color: #64748b;
+      margin-top: 6px;
+      text-align: center;
+    }
+
+    .result-feedback {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    .is-correct {
+      background-color: var(--success-bg) !important;
+      border-color: var(--success-color) !important;
+      color: #065f46 !important;
+    }
+
+    .is-incorrect {
+      background-color: var(--error-bg) !important;
+      border-color: var(--error-color) !important;
+      color: #991b1b !important;
+    }
+
+    .score-summary-modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 15px;
+    }
+
+    .score-modal-box {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 100%;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .score-badge-circle {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #eef2ff;
+      border: 4px solid #4f46e5;
+      color: #4338ca;
+    }
+
+    .score-num {
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .score-total {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #6366f1;
+    }
+
+    .summary-box {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 14px;
+      margin: 18px 0;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .summary-row:last-child {
+      border-bottom: none;
+    }
+
+    .sync-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-top: 12px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    .quick-review-card {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border: 1px solid #86efac;
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 25px;
+    }
+
+    .quick-review-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #166534;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .quick-review-list {
+      list-style-type: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .quick-review-list li {
+      font-size: 0.93rem;
+      color: #14532d;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .quick-review-list i {
+      color: #16a34a;
+      margin-top: 3px;
+    }
+
+    .btn-submit-all {
+      width: 100%;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 800;
+      padding: 16px;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .btn-submit-all:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.45);
+    }
+
+    .admin-modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(5px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1100;
+      padding: 15px;
+    }
+
+    .admin-box {
+      background: #ffffff;
+      border-radius: 18px;
+      max-width: 780px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 24px 28px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+
+    .admin-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-close {
+      background: transparent;
+      border: none;
+      font-size: 1.4rem;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .btn-close:hover {
+      color: #334155;
+    }
+
+    .config-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .sec-toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background: #f8fafc;
+      margin-bottom: 10px;
+    }
+
+    .sec-toggle-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .sec-points-input {
+      width: 70px;
+      padding: 5px 8px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .btn-save-admin {
+      background: #2563eb;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 15px;
+      transition: background 0.2s;
+    }
+
+    .btn-save-admin:hover {
+      background: #1d4ed8;
+    }
+
+    .alert-banner {
+      background: #fee2e2;
+      color: #b91c1c;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: none;
+      margin-bottom: 14px;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header class="pht-header">
+    <div class="header-top">
+      <div>
+        <span class="badge-label"><i class="fa-solid fa-graduation-cap"></i> <span id="display-subject">HÓA HỌC 12</span></span>
+        <h1 class="title-main" id="display-lesson-title">BÀI 6: TINH BỘT VÀ CELLULOSE</h1>
+        <p class="title-sub">Phiếu học tập tương tác - Kiểm tra & Củng cố kiến thức theo chương trình GDPT mới</p>
+      </div>
+      <div>
+        <button type="button" class="btn-admin" id="open-admin-btn">
+          <i class="fa-solid fa-gear"></i> QUẢN TRỊ
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Student Info Card -->
+    <section class="student-card">
+      <div class="form-group">
+        <label for="student-name"><i class="fa-solid fa-user"></i> Họ và tên học sinh:</label>
+        <input type="text" id="student-name" class="form-control" placeholder="Nhập đầy đủ họ và tên..." required>
+      </div>
+      <div class="form-group">
+        <label for="student-class"><i class="fa-solid fa-users-rectangle"></i> Lớp học:</label>
+        <input type="text" id="student-class" class="form-control" placeholder="Ví dụ: 12A1" required>
+      </div>
+      <div class="form-group">
+        <label><i class="fa-solid fa-calendar-check"></i> Trạng thái:</label>
+        <div style="font-weight: 700; color: #2563eb; padding: 9px 0;">
+          <i class="fa-solid fa-circle-play"></i> Sẵn sàng làm bài
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Objectives -->
+    <section class="card" id="sec-objectives">
+      <div class="card-header-banner">
+        <h2 class="card-title"><i class="fa-solid fa-bullseye" style="color: #4f46e5;"></i> MỤC TIÊU & HƯỚNG DẪN</h2>
+      </div>
+      <ul class="objective-list">
+        <li><i class="fa-solid fa-circle-check"></i> <span><strong>Mục tiêu:</strong> Nắm vững công thức phân tử, đặc điểm liên kết glycoside (alpha và beta) của tinh bột và cellulose; nhận biết phản ứng màu với iodine, phản ứng thủy phân và phản ứng este hóa với nitric acid.</span></li>
+        <li><i class="fa-solid fa-circle-check"></i> <span><strong>Vận dụng:</strong> Giải thích hiện tượng thực tế (nấu cơm, hồ tinh bột dính giấy, tơ sợi bông, chế tạo thuốc súng không khói cellulose trinitrate).</span></li>
+        <li><i class="fa-solid fa-hand-pointer"></i> <span><strong>Hướng dẫn:</strong> Học sinh hoàn thành tuần tự các hoạt động bên dưới. Ở mục kéo thả có thể kéo trực tiếp hoặc bấm chọn thẻ rồi bấm ô trả lời. Sau khi xong bấm <strong>NỘP BÀI & CHẤM ĐIỂM</strong> ở cuối trang.</span></li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-mcq">
+      <div class="card-header-banner">
+        <h2 class="card-title"><i class="fa-solid fa-list-check" style="color: #2563eb;"></i> KHU VỰC 1: TRẮC NGHIỆM NHANH</h2>
+        <span class="section-score" id="score-badge-mcq">Điểm: 2.0</span>
+      </div>
+
+      <!-- MCQ 1 -->
+      <div class="q-item" data-correct="A">
+        <div class="q-title">Câu 1: Phân tử amylose trong tinh bột được cấu tạo từ các đơn vị nào liên kết với nhau?</div>
+        <div class="options-grid">
+          <label class="opt-label"><input type="radio" name="mcq-0" value="A"> A. Các đơn vị &alpha;-glucose qua liên kết &alpha;-1,4-glycoside</label>
+          <label class="opt-label"><input type="radio" name="mcq-0" value="B"> B. Các đơn vị &beta;-glucose qua liên kết &beta;-1,4-glycoside</label>
+          <label class="opt-label"><input type="radio" name="mcq-0" value="C"> C. Các đơn vị &alpha;-glucose qua liên kết &alpha;-1,6-glycoside</label>
+          <label class="opt-label"><input type="radio" name="mcq-0" value="D"> D. Các đơn vị &beta;-fructose qua liên kết 1,2-glycoside</label>
+        </div>
+        <div class="result-feedback"></div>
+      </div>
+
+      <!-- MCQ 2 -->
+      <div class="q-item" data-correct="C">
+        <div class="q-title">Câu 2: Điểm khác biệt quan trọng trong cấu trúc của amylopectin so với amylose là:</div>
+        <div class="options-grid">
+          <label class="opt-label"><input type="radio" name="mcq-1" value="A"> A. Amylopectin chỉ gồm các gốc &beta;-glucose</label>
+          <label class="opt-label"><input type="radio" name="mcq-1" value="B"> B. Phân tử amylopectin không có liên kết &alpha;-1,4-glycoside</label>
+          <label class="opt-label"><input type="radio" name="mcq-1" value="C"> C. Amylopectin có cấu tạo phân nhánh nhờ có thêm liên kết &alpha;-1,6-glycoside</label>
+          <label class="opt-label"><input type="radio" name="mcq-1" value="D"> D. Amylopectin tan hoàn toàn trong nước lạnh</label>
+        </div>
+        <div class="result-feedback"></div>
+      </div>
+
+      <!-- MCQ 3 -->
+      <div class="q-item" data-correct="B">
+        <div class="q-title">Câu 3: Thuốc thử nào sau đây dùng để nhận biết dung dịch hồ tinh bột bằng màu xanh tím đặc trưng?</div>
+        <div class="options-grid">
+          <label class="opt-label"><input type="radio" name="mcq-2" value="A"> A. Dung dịch AgNO3 trong NH3 dư</label>
+          <label class="opt-label"><input type="radio" name="mcq-2" value="B"> B. Dung dịch iodine (I2 trong KI)</label>
+          <label class="opt-label"><input type="radio" name="mcq-2" value="C"> C. Nước vôi trong Ca(OH)2</label>
+          <label class="opt-label"><input type="radio" name="mcq-2" value="D"> D. Dung dịch Br2</label>
+        </div>
+        <div class="result-feedback"></div>
+      </div>
+
+      <!-- MCQ 4 -->
+      <div class="q-item" data-correct="D">
+        <div class="q-title">Câu 4: Khi đun nóng cellulose với hỗn hợp HNO3 đặc và H2SO4 đặc, sản phẩm hữu cơ thu được dùng làm thuốc súng không khói là:</div>
+        <div class="options-grid">
+          <label class="opt-label"><input type="radio" name="mcq-3" value="A"> A. Tinh bột nitrate</label>
+          <label class="opt-label"><input type="radio" name="mcq-3" value="B"> B. Glucose mononitrate</label>
+          <label class="opt-label"><input type="radio" name="mcq-3" value="C"> C. Cellulose triacetate</label>
+          <label class="opt-label"><input type="radio" name="mcq-3" value="D"> D. Cellulose trinitrate [C6H7O2(ONO2)3]n</label>
+        </div>
+        <div class="result-feedback"></div>
+      </div>
+    </section>
+
+    <section class="card" id="sec-fill">
+      <div class="card-header-banner">
+        <h2 class="card-title"><i class="fa-solid fa-pen-to-square" style="color: #0d9488;"></i> KHU VỰC 2: ĐIỀN KHUYẾT TRỌNG TÂM</h2>
+        <span class="section-score" id="score-badge-fill">Điểm: 1.5</span>
+      </div>
+
+      <div class="fill-sentence" data-ans="beta-glucose">
+        1. Phân tử cellulose được tạo nên từ nhiều đơn vị 
+        <select class="fill-select" id="fill-0">
+          <option value="">-- Chọn đáp án --</option>
+          <option value="alpha-glucose">&alpha;-glucose</option>
+          <option value="beta-glucose">&beta;-glucose</option>
+          <option value="alpha-fructose">&alpha;-fructose</option>
+          <option value="galactose">galactose</option>
+        </select>
+        liên kết với nhau bằng liên kết &beta;-1,4-glycoside và có dạng chuỗi thẳng dài, không phân nhánh.
+        <div class="result-feedback"></div>
+      </div>
+
+      <div class="fill-sentence" data-ans="nuoc-nong">
+        2. Tinh bột là chất rắn màu trắng, hầu như không tan trong nước lạnh nhưng trong 
+        <select class="fill-select" id="fill-1">
+          <option value="">-- Chọn môi trường --</option>
+          <option value="nuoc-nong">nước nóng</option>
+          <option value="nuoc-lanh">nước đá lạnh</option>
+          <option value="con-96">cồn 96 độ</option>
+          <option value="xang">xăng thơm</option>
+        </select>
+        nó sẽ trương nở tạo thành dung dịch keo nhớt gọi là hồ tinh bột.
+        <div class="result-feedback"></div>
+      </div>
+
+      <div class="fill-sentence" data-ans="Schweizer">
+        3. Khác với tinh bột, cellulose không tan trong nước đun sôi nhưng lại tan tốt trong nước 
+        <select class="fill-select" id="fill-2">
+          <option value="">-- Chọn dung dịch --</option>
+          <option value="Schweizer">Schweizer (Cu(OH)2 trong NH3 đặc)</option>
+          <option value="bromine">nước brom bão hòa</option>
+          <option value="acid-acetic">dung dịch acid acetic loãng</option>
+          <option value="nuoc-voi">nước vôi trong bão hòa</option>
+        </select>
+        , tạo dung dịch phức chất ứng dụng sản xuất tơ đồng - amoniac.
+        <div class="result-feedback"></div>
+      </div>
+    </section>
+
+    <section class="card" id="sec-tf">
+      <div class="card-header-banner">
+        <h2 class="card-title"><i class="fa-solid fa-circle-question" style="color: #ea580c;"></i> KHU VỰC 3: ĐÁNH GIÁ ĐÚNG / SAI</h2>
+        <span class="section-score" id="score-badge-tf">Điểm: 1.5</span>
+      </div>
+      <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 12px;">Đánh giá tính chính xác của mỗi nhận định sau đây dựa trên cấu trúc và tính chất hóa học:</p>
+      
+      <table class="tf-table">
+        <thead>
+          <tr>
+            <th>Nội dung phát biểu</th>
+            <th class="tf-col-choice">Đúng</th>
+            <th class="tf-col-choice">Sai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tf-row" data-correct="S">
+            <td><strong>1.</strong> Tinh bột và cellulose đều có công thức phân tử là (C<sub>6</sub>H<sub>10</sub>O<sub>5</sub>)<sub>n</sub> nên chúng là đồng phân của nhau.</td>
+            <td class="tf-col-choice"><input type="radio" name="tf-0" value="D" class="tf-radio"></td>
+            <td class="tf-col-choice"><input type="radio" name="tf-0" value="S" class="tf-radio"></td>
+          </tr>
+          <tr class="tf-row" data-correct="D">
+            <td><strong>2.</strong> Thủy phân hoàn toàn tinh bột hoặc cellulose dưới xúc tác acid hay enzyme đều thu được sản phẩm cuối cùng duy nhất là glucose.</td>
+            <td class="tf-col-choice"><input type="radio" name="tf-1" value="D" class="tf-radio"></td>
+            <td class="tf-col-choice"><input type="radio" name="tf-1" value="S" class="tf-radio"></td>
+          </tr>
+          <tr class="tf-row" data-correct="S">
+            <td><strong>3.</strong> Khi đun nóng hỗn hợp hồ tinh bột và iodine, màu xanh tím sẽ đậm hơn và không bị biến đổi khi để nguội.</td>
+            <td class="tf-col-choice"><input type="radio" name="tf-2" value="D" class="tf-radio"></td>
+            <td class="tf-col-choice"><input type="radio" name="tf-2" value="S" class="tf-radio"></td>
+          </tr>
+          <tr class="tf-row" data-correct="D">
+            <td><strong>4.</strong> Mỗi mắt xích C<sub>6</sub>H<sub>10</sub>O<sub>5</sub> trong phân tử cellulose có 3 nhóm hydroxy tự do (-OH), do đó có thể viết là [C<sub>6</sub>H<sub>7</sub>O<sub>2</sub>(OH)<sub>3</sub>]<sub>n</sub>.</td>
+            <td class="tf-col-choice"><input type="radio" name="tf-3" value="D" class="tf-radio"></td>
+            <td class="tf-col-choice"><input type="radio" name="tf-3" value="S" class="tf-radio"></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card" id="sec-match">
+      <div class="card-header-banner">
+        <h2 class="card-title"><i class="fa-solid fa-arrows-split-up-and-left" style="color: #9333ea;"></i> KHU VỰC 4: NỐI CỘT TƯƠNG ỨNG</h2>
+        <span class="section-score" id="score-badge-match">Điểm: 1.5</span>
+      </div>
+      <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 14px;">Ghép mỗi đối tượng ở Cột A với đặc điểm/ứng dụng phù hợp nhất ở Cột B:</p>
+
+      <div class="matching-grid">
+        <!-- Column A -->
+        <div>
+          <div class="match-col-header"><i class="fa-solid fa-cube"></i> CỘT A: HỢP CHẤT / ĐỐI TƯỢNG</div>
+          
+          <div class="match-row" data-ans="B">
+            <span><strong>1. Amylose</strong></span>
+            <select class="form-control" style="width: auto; padding: 6px 10px;" id="match-0">
+              <option value="">Ghép với...</option>
+              <option value="A">Lựa chọn A</option>
+              <option value="B">Lựa chọn B</option>
+              <option value="C">Lựa chọn C</option>
+              <option value="D">Lựa chọn D</option>
+            </select>
+          </div>
+
+          <div class="match-row" data-ans="A">
+            <span><strong>2. Amylopectin</strong></span>
+            <select class="form-control" style="width: auto; padding: 6px 10px;" id="match-1">
+              <option value="">Ghép với...</option>
+              <option value="A">Lựa chọn A</option>
+              <option value="B">Lựa chọn B</option>
+              <option value="C">Lựa chọn C</option>
+              <option value="D">Lựa chọn D</option>
+            </select>
+          </div>
+
+          <div class="match-row" data-ans="D">
+            <span><strong>3. Cellulose</strong></span>
+            <select class="form-control" style="width: auto; padding: 6px 10px;" id="match-2">
+              <option value="">Ghép với...</option>
+              <option value="A">Lựa chọn A</option>
+              <option value="B">Lựa chọn B</option>
+              <option value="C">Lựa chọn C</option>
+              <option value="D">Lựa chọn D</option>
+            </select>
+          </div>
+
+          <div class="match-row" data-ans="C">
+            <span><strong>4. Cellulose trinitrate</strong></span>
+            <select class="form-control" style="width: auto; padding: 6px 10px;" id="match-3">
+              <option value="">Ghép với...</option>
+              <option value="A">Lựa chọn A</option>
+              <option value="B">Lựa chọn B</option>
+              <option value="C">Lựa chọn C</option>
+              <option value="D">Lựa chọn D</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Column B -->
+        <div>
+          <div class="match-col-header"><i class="fa-solid fa-list-ol"></i> CỘT B: ĐẶC ĐIỂM / CẤU TRÚC / ỨNG DỤNG</div>
+          <div class="match-target-desc"><strong>A.</strong> Mạch phân nhánh, chứa đồng thời liên kết &alpha;-1,4-glycoside và &alpha;-1,6-glycoside.</div>
+          <div class="match-target-desc"><strong>B.</strong> Mạch không phân nhánh, cuộn xoắn lò xo, cho phản ứng màu xanh tím với iodine.</div>
+          <div class="match-target-desc"><strong>C.</strong> Rất dễ cháy, nổ mạnh, khói không sinh ra chất rắn, dùng làm thuốc súng không khói.</div>
+          <div class="match-target-desc"><strong>D.</strong> Thành phần chính tạo nên màng tế bào thực vật, chiếm 98% sợi bông noãn, dùng sản xuất giấy & tơ sợi.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="sec-dnd">
+      <div class="card-header-banner">
+        <h2 class="card-title"><i class="fa-solid fa-images" style="color: #ec4899;"></i> KHU VỰC 5: KÉO THẢ HÌNH ẢNH & ĐỐI TƯỢNG</h2>
+        <span class="section-score" id="score-badge-dnd">Điểm: 1.5</span>
+      </div>
+      
+      <div class="dnd-hint">
+        <i class="fa-solid fa-circle-info"></i>
+        <span><strong>Cách làm:</strong> Dùng chuột/tay kéo thẻ vào ô thích hợp <em>HOẶC</em> chạm chọn thẻ (sẽ sáng viền) rồi chạm vào ô đích.</span>
+      </div>
+
+      <!-- Item pool -->
+      <div class="dnd-pool" id="dnd-source-pool">
+        <div class="dnd-item" draggable="true" id="item-cotton" data-match="box-cellulose">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><rect width='160' height='100' fill='%23f1f5f9'/><circle cx='80' cy='50' r='28' fill='%23ffffff' stroke='%23cbd5e1' stroke-width='4'/><circle cx='60' cy='50' r='20' fill='%23ffffff'/><circle cx='100' cy='50' r='20' fill='%23ffffff'/><text x='80' y='55' font-size='12' text-anchor='middle' fill='%23334155' font-weight='bold'>Sợi Bông (90-98%)</text></svg>" alt="Quả bông" id="img-cotton">
+          <div class="dnd-item-title">Sợi bông nõn</div>
+        </div>
+
+        <div class="dnd-item" draggable="true" id="item-rice" data-match="box-starch">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><rect width='160' height='100' fill='%23fef3c7'/><ellipse cx='80' cy='50' rx='45' ry='22' fill='%23ffffff' stroke='%23f59e0b' stroke-width='3'/><text x='80' y='54' font-size='12' text-anchor='middle' fill='%2392400e' font-weight='bold'>Hạt Gạo (80%)</text></svg>" alt="Hạt gạo" id="img-rice">
+          <div class="dnd-item-title">Hạt gạo / Ngô</div>
+        </div>
+
+        <div class="dnd-item" draggable="true" id="item-helix" data-match="box-iodine">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><rect width='160' height='100' fill='%23ede9fe'/><path d='M30,50 Q45,20 60,50 T90,50 T120,50' fill='none' stroke='%237c3aed' stroke-width='8'/><circle cx='75' cy='50' r='8' fill='%234338ca'/><text x='80' y='85' font-size='11' text-anchor='middle' fill='%234c1d95' font-weight='bold'>Amylose + I2 (Xanh tím)</text></svg>" alt="Phức màu I2" id="img-helix">
+          <div class="dnd-item-title">Phức xanh tím Iodine</div>
+        </div>
+      </div>
+
+      <!-- Drop Targets -->
+      <div class="dropzone-grid">
+        <div class="dropzone" id="box-starch" data-accept="box-starch">
+          <div class="dropzone-label"><i class="fa-solid fa-bowl-rice"></i> Ô 1: Chứa nguồn TINH BỘT cao nhất</div>
+        </div>
+        <div class="dropzone" id="box-cellulose" data-accept="box-cellulose">
+          <div class="dropzone-label"><i class="fa-solid fa-tree"></i> Ô 2: Chứa nguồn CELLULOSE gần như tinh khiết</div>
+        </div>
+        <div class="dropzone" id="box-iodine" data-accept="box-iodine">
+          <div class="dropzone-label"><i class="fa-solid fa-vial-virus"></i> Ô 3: Cấu trúc phân tử xoắn bọc Iodine</div>
+        </div>
+      </div>
+      <div class="result-feedback" id="feedback-dnd"></div>
+    </section>
+
+    <section class="card" id="sec-video">
+      <div class="card-header-banner">
+        <h2 class="card-title"><i class="fa-solid fa-circle-play" style="color: #dc2626;"></i> KHU VỰC 6: XEM THÍ NGHIỆM VIDEO & TRẢ LỜI</h2>
+        <span class="section-score" id="score-badge-video">Điểm: 2.0</span>
+      </div>
+
+      <div class="video-grid-dual">
+        <!-- Video 1: Phản ứng màu với Iodine -->
+        <div class="video-sub-card">
+          <div class="video-sub-title">
+            <i class="fa-solid fa-flask-vial" style="color: #7c3aed;"></i> Video 1: Hồ tinh bột tác dụng với Iodine
+          </div>
+          <div class="video-wrapper" id="video-wrapper-1">
+            <!-- Dynamic Smart Video Player rendered by JS -->
+          </div>
+          <div class="fill-sentence" data-ans="xanh-tim" style="margin-top: 5px; margin-bottom: 0;">
+            1. Khi nhỏ vài giọt dung dịch iodine vào ống nghiệm chứa 2 mL hồ tinh bột 1%, hiện tượng quan sát thấy là dung dịch xuất hiện màu 
+            <select class="fill-select" id="vid-0">
+              <option value="">-- Chọn hiện tượng --</option>
+              <option value="xanh-tim">xanh tím đặc trưng</option>
+              <option value="do-gach">đỏ gạch của Cu2O</option>
+              <option value="vang-cam">vàng cam của Ag</option>
+              <option value="trang-duc">vẩn đục màu trắng</option>
+            </select>.
+            <div class="result-feedback"></div>
+          </div>
+        </div>
+
+        <!-- Video 2: Phản ứng thủy phân tinh bột -->
+        <div class="video-sub-card">
+          <div class="video-sub-title">
+            <i class="fa-solid fa-fire-burner" style="color: #ea580c;"></i> Video 2: Thủy phân tinh bột môi trường acid
+          </div>
+          <div class="video-wrapper" id="video-wrapper-2">
+            <!-- Dynamic Smart Video Player rendered by JS -->
+          </div>
+          <div class="fill-sentence" data-ans="Cu2O-do-gach" style="margin-top: 5px; margin-bottom: 0;">
+            2. Sau khi thủy phân hồ tinh bột bằng dung dịch acid loãng (đun cách thủy), trung hòa bằng NaHCO3 rồi cho tác dụng với Cu(OH)2 đun nóng, hiện tượng thu được kết tủa 
+            <select class="fill-select" id="vid-1">
+              <option value="">-- Chọn kết tủa --</option>
+              <option value="Cu2O-do-gach">đỏ gạch (Cu2O) chứng tỏ đã tạo thành Glucose</option>
+              <option value="Ag-trang-sang">trắng sáng bám ống nghiệm</option>
+              <option value="Cu-kim-loai">kim loại Cu màu đỏ lắng xuống đáy</option>
+              <option value="CuO-den">chất rắn màu đen CuO</option>
+            </select>.
+            <div class="result-feedback"></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="video-helper-note"><i class="fa-solid fa-circle-info"></i> Giáo viên có thể nhập liên kết (YouTube, Google Drive, MP4 trực tiếp) hoặc tải lên video từ máy tính trong mục <strong>⚙️ QUẢN TRỊ</strong>.</p>
+    </section>
+
+    <!-- Submit Button -->
+    <button type="button" class="btn-submit-all" id="btn-submit">
+      <i class="fa-solid fa-paper-plane"></i> NỘP BÀI & CHẤM ĐIỂM TỰ ĐỘNG
+    </button>
+
+    <div class="quick-review-card">
+      <div class="quick-review-title">
+        <i class="fa-solid fa-bolt-lightning"></i> GHI NHỚ SIÊU NHANH BÀI HỌC (KEY POINTS)
+      </div>
+      <ul class="quick-review-list">
+        <li><i class="fa-solid fa-star"></i> <strong>Công thức chung:</strong> Cả tinh bột và cellulose đều là polysaccharide có công thức (C<sub>6</sub>H<sub>10</sub>O<sub>5</sub>)<sub>n</sub> nhưng không phải đồng phân do hệ số n khác nhau.</li>
+        <li><i class="fa-solid fa-star"></i> <strong>Cấu tạo mắt xích:</strong> Tinh bột gồm các gốc &alpha;-glucose (amylose mạch thẳng cuộn xoắn, amylopectin phân nhánh); Cellulose gồm các gốc &beta;-glucose mạch thẳng kéo dài.</li>
+        <li><i class="fa-solid fa-star"></i> <strong>Phản ứng màu iodine:</strong> Amylose có dạng xoắn, các phân tử iodine len vào hốc xoắn tạo phức hợp màu xanh tím đặc trưng (đun nóng mất màu, nguội xuất hiện lại).</li>
+        <li><i class="fa-solid fa-star"></i> <strong>Thủy phân:</strong> Cả hai đều bị thủy phân hoàn toàn bởi acid hoặc enzyme sinh ra sản phẩm cuối cùng là glucose.</li>
+        <li><i class="fa-solid fa-star"></i> <strong>Cellulose trinitrate:</strong> Phản ứng giữa [C<sub>6</sub>H<sub>7</sub>O<sub>2</sub>(OH)<sub>3</sub>]<sub>n</sub> với HNO<sub>3</sub> đặc (xúc tác H<sub>2</sub>SO<sub>4</sub> đặc) tạo thuốc súng không khói.</li>
+        <li><i class="fa-solid fa-star"></i> <strong>Độ tan đặc biệt:</strong> Cellulose không tan trong nước và dung môi thông thường nhưng tan trong nước Schweizer (dung dịch Cu(OH)<sub>2</sub> trong amoniac đặc).</li>
+      </ul>
+    </div>
+  </main>
+
+  <div class="score-summary-modal" id="score-modal">
+    <div class="score-modal-box">
+      <div class="score-badge-circle">
+        <div class="score-num" id="modal-score-val">0</div>
+        <div class="score-total" id="modal-score-max">/ 10 điểm</div>
+      </div>
+      <h3 style="font-size: 1.4rem; color: #1e293b; margin-bottom: 6px;">KẾT QUẢ BÀI LÀM CỦA EM</h3>
+      <p style="color: #64748b; font-size: 0.95rem;" id="modal-student-greeting">Học sinh đã hoàn thành phiếu học tập!</p>
+
+      <div class="summary-box" id="modal-breakdown"></div>
+
+      <div class="sync-status" id="modal-sync-status">
+        <i class="fa-solid fa-cloud-arrow-up"></i> Đang đồng bộ kết quả lên Google Sheets...
+      </div>
+
+      <button type="button" class="btn-save-admin" id="btn-close-score" style="margin-top: 10px;">
+        <i class="fa-solid fa-check"></i> Xem lại chi tiết bài làm
+      </button>
+    </div>
+  </div>
+
+  <!-- Admin Modal -->
+  <div class="admin-modal" id="admin-modal">
+    <div class="admin-box">
+      <div class="admin-header">
+        <h3 class="admin-title"><i class="fa-solid fa-sliders-h" style="color: #2563eb;"></i> BẢNG ĐIỀU KHIỂN QUẢN TRỊ (GIÁO VIÊN)</h3>
+        <button type="button" class="btn-close" id="btn-close-admin">&times;</button>
+      </div>
+
+      <div class="alert-banner" id="admin-alert">
+        <i class="fa-solid fa-triangle-exclamation"></i> <span id="admin-alert-text">Cảnh báo</span>
+      </div>
+
+      <div id="admin-success-toast" style="display: none; background: #ecfdf5; border: 1.5px solid #10b981; color: #065f46; padding: 12px 16px; border-radius: 8px; margin-bottom: 14px; font-weight: 700; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-circle-check"></i> Đã lưu cấu hình và áp dụng thành công lên phiếu học tập!
+      </div>
+
+      <div class="config-grid">
+        <div class="form-group">
+          <label>Môn học:</label>
+          <input type="text" id="cfg-subject" class="form-control" value="HÓA HỌC">
+        </div>
+        <div class="form-group">
+          <label>Khối lớp:</label>
+          <input type="text" id="cfg-grade" class="form-control" value="12">
+        </div>
+        <div class="form-group">
+          <label>Tên bài học:</label>
+          <input type="text" id="cfg-title" class="form-control" value="Bài 6: Tinh bột và cellulose">
+        </div>
+        <div class="form-group">
+          <label><strong>Tổng điểm toàn phiếu:</strong></label>
+          <input type="number" id="cfg-total-score" class="form-control" value="10" step="0.5" min="1">
+        </div>
+      </div>
+
+      <!-- Google Apps Script URL Integration -->
+      <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 8px; padding: 14px; margin-bottom: 16px;">
+        <div style="font-weight: 800; color: #166534; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-table-cells"></i> Kết nối Google Sheets (Nhận điểm tự động):
+        </div>
+        <div style="font-size: 0.85rem; color: #15803d; margin-bottom: 8px;">
+          URL Web App Google Apps Script lưu điểm:
+        </div>
+        <input type="url" id="cfg-sheet-url" class="form-control" placeholder="https://script.google.com/macros/s/.../exec">
+      </div>
+
+      <h4 style="font-size: 1rem; color: #334155; margin: 15px 0 10px; border-top: 1px solid #e2e8f0; padding-top: 12px;">
+        <i class="fa-solid fa-toggle-on"></i> Cấu hình bật/tắt & Điểm tối đa từng khu vực:
+      </h4>
+
+      <div class="sec-toggle-row">
+        <div class="sec-toggle-left">
+          <input type="checkbox" id="cfg-enable-mcq" checked>
+          <label for="cfg-enable-mcq">Khu vực 1: Trắc nghiệm (4 câu)</label>
+        </div>
+        <div>
+          Điểm: <input type="number" class="sec-points-input" id="cfg-pts-mcq" value="2.0" step="0.25">
+        </div>
+      </div>
+
+      <div class="sec-toggle-row">
+        <div class="sec-toggle-left">
+          <input type="checkbox" id="cfg-enable-fill" checked>
+          <label for="cfg-enable-fill">Khu vực 2: Điền khuyết (3 câu)</label>
+        </div>
+        <div>
+          Điểm: <input type="number" class="sec-points-input" id="cfg-pts-fill" value="1.5" step="0.25">
+        </div>
+      </div>
+
+      <div class="sec-toggle-row">
+        <div class="sec-toggle-left">
+          <input type="checkbox" id="cfg-enable-tf" checked>
+          <label for="cfg-enable-tf">Khu vực 3: Đúng / Sai (4 phát biểu)</label>
+        </div>
+        <div>
+          Điểm: <input type="number" class="sec-points-input" id="cfg-pts-tf" value="1.5" step="0.25">
+        </div>
+      </div>
+
+      <div class="sec-toggle-row">
+        <div class="sec-toggle-left">
+          <input type="checkbox" id="cfg-enable-match" checked>
+          <label for="cfg-enable-match">Khu vực 4: Nối cột (4 cặp)</label>
+        </div>
+        <div>
+          Điểm: <input type="number" class="sec-points-input" id="cfg-pts-match" value="1.5" step="0.25">
+        </div>
+      </div>
+
+      <div class="sec-toggle-row">
+        <div class="sec-toggle-left">
+          <input type="checkbox" id="cfg-enable-dnd" checked>
+          <label for="cfg-enable-dnd">Khu vực 5: Kéo thả hình ảnh (3 đối tượng)</label>
+        </div>
+        <div>
+          Điểm: <input type="number" class="sec-points-input" id="cfg-pts-dnd" value="1.5" step="0.25">
+        </div>
+      </div>
+
+      <div class="sec-toggle-row">
+        <div class="sec-toggle-left">
+          <input type="checkbox" id="cfg-enable-video" checked>
+          <label for="cfg-enable-video">Khu vực 6: Video & Điền khuyết (2 câu)</label>
+        </div>
+        <div>
+          Điểm: <input type="number" class="sec-points-input" id="cfg-pts-video" value="2.0" step="0.25">
+        </div>
+      </div>
+
+      <h4 style="font-size: 1rem; color: #334155; margin: 15px 0 10px; border-top: 1px solid #e2e8f0; padding-top: 12px;">
+        <i class="fa-solid fa-photo-film"></i> Cấu hình Smart Video Player & Thay ảnh:
+      </h4>
+
+      <!-- Video 1 Config Box -->
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+        <div style="font-weight: 700; color: #4338ca; margin-bottom: 8px;">
+          <i class="fa-solid fa-video"></i> Video 1: Hồ tinh bột + Dung dịch Iodine:
+        </div>
+        <div class="form-group" style="margin-bottom: 8px;">
+          <label>URL (YouTube / Google Drive / MP4 trực tuyến):</label>
+          <input type="text" id="cfg-video1-url" class="form-control" placeholder="https://youtube.com/watch?v=... hoặc https://drive.google.com/file/d/...">
+        </div>
+        <div class="form-group">
+          <label>Hoặc tải tệp Video 1 từ máy tính (.mp4, .webm):</label>
+          <input type="file" id="cfg-video1-file" class="form-control" accept="video/mp4,video/webm">
+        </div>
+      </div>
+
+      <!-- Video 2 Config Box -->
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+        <div style="font-weight: 700; color: #c2410c; margin-bottom: 8px;">
+          <i class="fa-solid fa-video"></i> Video 2: Thuỷ phân tinh bột:
+        </div>
+        <div class="form-group" style="margin-bottom: 8px;">
+          <label>URL (YouTube / Google Drive / MP4 trực tuyến):</label>
+          <input type="text" id="cfg-video2-url" class="form-control" placeholder="https://youtube.com/watch?v=... hoặc https://drive.google.com/file/d/...">
+        </div>
+        <div class="form-group">
+          <label>Hoặc tải tệp Video 2 từ máy tính (.mp4, .webm):</label>
+          <input type="file" id="cfg-video2-file" class="form-control" accept="video/mp4,video/webm">
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 10px;">
+        <label>Thay ảnh cho đối tượng kéo thả 1 (Sợi bông):</label>
+        <input type="file" id="cfg-img-cotton" class="form-control" accept="image/*">
+      </div>
+
+      <div class="form-group" style="margin-bottom: 10px;">
+        <label>Thay ảnh cho đối tượng kéo thả 2 (Hạt gạo):</label>
+        <input type="file" id="cfg-img-rice" class="form-control" accept="image/*">
+      </div>
+
+      <div class="form-group" style="margin-bottom: 15px;">
+        <label>Thay ảnh cho đối tượng kéo thả 3 (Phức Iodine):</label>
+        <input type="file" id="cfg-img-helix" class="form-control" accept="image/*">
+      </div>
+
+      <!-- Save Admin Config Button -->
+      <button type="button" class="btn-save-admin" id="btn-save-config">
+        <i class="fa-solid fa-floppy-disk"></i> LƯU CẤU HÌNH & ÁP DỤNG
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast-notify">
+    <i class="fa-solid fa-circle-check" style="font-size: 1.3rem;"></i>
+    <span id="toast-notify-text">Đã lưu cấu hình và áp dụng thành công!</span>
+  </div>
+
+  <!-- Password Prompt Modal -->
+  <div class="score-summary-modal" id="password-modal">
+    <div class="score-modal-box" style="max-width: 400px; padding: 22px;">
+      <h3 style="font-size: 1.25rem; color: #1e293b; margin-bottom: 8px;"><i class="fa-solid fa-lock" style="color: #4f46e5;"></i> Xác thực Giáo viên</h3>
+      <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 14px;">Vui lòng nhập mật khẩu quản trị để mở cài đặt:</p>
+      <input type="password" id="admin-pass-input" class="form-control" placeholder="Nhập mật khẩu..." style="text-align: center; font-size: 1.1rem; letter-spacing: 2px;">
+      <div id="pass-err" style="color: #ef4444; font-size: 0.85rem; margin-top: 6px; display: none;">Mật khẩu không đúng! Vui lòng thử lại.</div>
+      <div style="display: flex; gap: 10px; margin-top: 15px;">
+        <button type="button" class="form-control" id="btn-cancel-pass" style="background: #f1f5f9; cursor: pointer;">Hủy</button>
+        <button type="button" class="form-control" id="btn-confirm-pass" style="background: #2563eb; color: #fff; cursor: pointer; font-weight: 700;">Đăng nhập</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const DEFAULT_CONFIG = {
+      subject: "HÓA HỌC",
+      grade: "12",
+      lessonTitle: "BÀI 6: TINH BỘT VÀ CELLULOSE",
+      totalScore: 10.0,
+      sheetScriptUrl: "https://script.google.com/macros/s/AKfycbwtjdBsbgmP0gZbTQLgdc9cSSIWCBJ-u6Vu3xNFHldDgzmu2T7Z6ch_cMOD4vrs1XpyfA/exec",
+      sections: {
+        mcq: { enabled: true, score: 2.0, count: 4 },
+        fill: { enabled: true, score: 1.5, count: 3 },
+        tf: { enabled: true, score: 1.5, count: 4 },
+        match: { enabled: true, score: 1.5, count: 4 },
+        dnd: { enabled: true, score: 1.5, count: 3 },
+        video: { enabled: true, score: 2.0, count: 2 }
+      },
+      video1Url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      video2Url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      customImages: {
+        cotton: "",
+        rice: "",
+        helix: ""
+      }
+    };
+
+    let appConfig = JSON.parse(localStorage.getItem('PHT_CONFIG')) || DEFAULT_CONFIG;
+    if (!appConfig.sheetScriptUrl) {
+      appConfig.sheetScriptUrl = DEFAULT_CONFIG.sheetScriptUrl;
+    }
+    if (!appConfig.customImages) {
+      appConfig.customImages = { cotton: "", rice: "", helix: "" };
+    }
+
+    let selectedDndItem = null;
+
+    function showToast(message, isError = false) {
+      const toast = document.getElementById('toast-notify');
+      const toastText = document.getElementById('toast-notify-text');
+      toastText.innerText = message;
+      toast.style.background = isError ? '#b91c1c' : '#065f46';
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    function getYouTubeVideoId(url) {
+      if (!url) return null;
+      const cleanUrl = url.trim();
+      const ytRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+      const match = cleanUrl.match(ytRegex);
+      return (match && match[1]) ? match[1] : null;
+    }
+
+    function getGoogleDriveVideoId(url) {
+      if (!url) return null;
+      const cleanUrl = url.trim();
+      const driveRegex = /drive\.google\.com\/(?:file\/d\/([a-zA-Z0-9_-]+)|open\?id=([a-zA-Z0-9_-]+)|uc\?id=([a-zA-Z0-9_-]+))/i;
+      const match = cleanUrl.match(driveRegex);
+      return match ? (match[1] || match[2] || match[3]) : null;
+    }
+
+    function renderVideoPlayer(wrapperId, videoUrl, defaultPoster) {
+      const wrapper = document.getElementById(wrapperId);
+      if (!wrapper) return;
+      if (!videoUrl || !videoUrl.trim()) {
+        wrapper.innerHTML = `<div style="color: #94a3b8; font-size: 0.9rem; text-align: center; padding: 30px 15px;"><i class="fa-solid fa-video-slash" style="font-size: 2rem; display: block; margin-bottom: 8px;"></i>Chưa có video được thiết lập</div>`;
+        return;
+      }
+
+      const trimmed = videoUrl.trim();
+      const ytId = getYouTubeVideoId(trimmed);
+      const driveId = getGoogleDriveVideoId(trimmed);
+
+      // Trường hợp 1: YouTube
+      if (ytId) {
+        wrapper.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${ytId}?rel=0&autoplay=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        return;
+      }
+
+      // Trường hợp 2: Google Drive
+      if (driveId) {
+        wrapper.innerHTML = `<iframe src="https://drive.google.com/file/d/${driveId}/preview" allow="autoplay" allowfullscreen></iframe>`;
+        return;
+      }
+
+      // Trường hợp 3: Tệp MP4/WebM trực tiếp hoặc Tải lên từ máy tính (Blob/Data URL)
+      wrapper.innerHTML = `
+        <video controls playsinline preload="metadata" poster="${defaultPoster}">
+          <source src="${trimmed}" type="video/mp4">
+          <source src="${trimmed}" type="video/webm">
+          Trình duyệt không hỗ trợ thẻ video HTML5.
+        </video>
+      `;
+
+      const vidEl = wrapper.querySelector('video');
+      if (vidEl) {
+        try {
+          vidEl.load();
+        } catch (e) {
+          console.warn('Lỗi gọi video.load():', e);
+        }
+      }
+    }
+
+    function compressAndStoreImage(file, key, callback) {
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          const maxDim = 320;
+          let width = img.width;
+          let height = img.height;
+
+          if (width > height) {
+            if (width > maxDim) {
+              height = Math.round((height * maxDim) / width);
+              width = maxDim;
+            }
+          } else {
+            if (height > maxDim) {
+              width = Math.round((width * maxDim) / height);
+              height = maxDim;
+            }
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+          const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.85);
+
+          if (!appConfig.customImages) appConfig.customImages = {};
+          appConfig.customImages[key] = compressedDataUrl;
+
+          try {
+            localStorage.setItem('PHT_CONFIG', JSON.stringify(appConfig));
+          } catch (err) {
+            console.warn('Lỗi ghi localStorage:', err);
+          }
+
+          callback(compressedDataUrl);
+        };
+        img.src = event.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function applyConfigToUI() {
+      document.getElementById('display-subject').innerText = `${appConfig.subject} ${appConfig.grade}`;
+      document.getElementById('display-lesson-title').innerText = appConfig.lessonTitle;
+
+      document.getElementById('score-badge-mcq').innerText = `Điểm: ${appConfig.sections.mcq.score}`;
+      document.getElementById('score-badge-fill').innerText = `Điểm: ${appConfig.sections.fill.score}`;
+      document.getElementById('score-badge-tf').innerText = `Điểm: ${appConfig.sections.tf.score}`;
+      document.getElementById('score-badge-match').innerText = `Điểm: ${appConfig.sections.match.score}`;
+      document.getElementById('score-badge-dnd').innerText = `Điểm: ${appConfig.sections.dnd.score}`;
+      document.getElementById('score-badge-video').innerText = `Điểm: ${appConfig.sections.video.score}`;
+
+      document.getElementById('sec-mcq').style.display = appConfig.sections.mcq.enabled ? 'block' : 'none';
+      document.getElementById('sec-fill').style.display = appConfig.sections.fill.enabled ? 'block' : 'none';
+      document.getElementById('sec-tf').style.display = appConfig.sections.tf.enabled ? 'block' : 'none';
+      document.getElementById('sec-match').style.display = appConfig.sections.match.enabled ? 'block' : 'none';
+      document.getElementById('sec-dnd').style.display = appConfig.sections.dnd.enabled ? 'block' : 'none';
+      document.getElementById('sec-video').style.display = appConfig.sections.video.enabled ? 'block' : 'none';
+
+      // Nạp và kích hoạt 2 Smart Video Players
+      const poster1 = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'><rect width='640' height='360' fill='%231e293b'/><circle cx='320' cy='180' r='38' fill='%237c3aed'/><polygon points='310,165 338,180 310,195' fill='%23ffffff'/><text x='320' y='250' font-size='18' text-anchor='middle' fill='%23ffffff' font-family='sans-serif'>Thí nghiệm 1: Hồ tinh bột + Dung dịch Iodine</text></svg>";
+      renderVideoPlayer('video-wrapper-1', appConfig.video1Url, poster1);
+
+      const poster2 = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'><rect width='640' height='360' fill='%231e293b'/><circle cx='320' cy='180' r='38' fill='%23ea580c'/><polygon points='310,165 338,180 310,195' fill='%23ffffff'/><text x='320' y='250' font-size='18' text-anchor='middle' fill='%23ffffff' font-family='sans-serif'>Thí nghiệm 2: Phản ứng thuỷ phân Tinh bột</text></svg>";
+      renderVideoPlayer('video-wrapper-2', appConfig.video2Url, poster2);
+
+      // Cập nhật ảnh nếu có thay đổi
+      if (appConfig.customImages) {
+        if (appConfig.customImages.cotton) document.getElementById('img-cotton').src = appConfig.customImages.cotton;
+        if (appConfig.customImages.rice) document.getElementById('img-rice').src = appConfig.customImages.rice;
+        if (appConfig.customImages.helix) document.getElementById('img-helix').src = appConfig.customImages.helix;
+      }
+    }
+
+    function initDragAndDrop() {
+      const items = document.querySelectorAll('.dnd-item');
+      const dropzones = document.querySelectorAll('.dropzone');
+      const sourcePool = document.getElementById('dnd-source-pool');
+
+      let touchElement = null;
+      let touchClone = null;
+      let offsetX = 0;
+      let offsetY = 0;
+
+      items.forEach(item => {
+        // Chuột trên máy tính
+        item.addEventListener('dragstart', (e) => {
+          e.dataTransfer.setData('text/plain', item.id);
+          item.classList.add('selected');
+        });
+
+        item.addEventListener('dragend', () => {
+          item.classList.remove('selected');
+        });
+
+        // Chạm chọn (Tap-to-select) cho cả mobile và desktop
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (selectedDndItem === item) {
+            item.classList.remove('selected');
+            selectedDndItem = null;
+          } else {
+            if (selectedDndItem) selectedDndItem.classList.remove('selected');
+            selectedDndItem = item;
+            item.classList.add('selected');
+          }
+        });
+
+        // Vuốt cảm ứng tay trên điện thoại
+        item.addEventListener('touchstart', (e) => {
+          if (e.touches.length !== 1) return;
+          touchElement = item;
+          const touch = e.touches[0];
+          const rect = item.getBoundingClientRect();
+          offsetX = touch.clientX - rect.left;
+          offsetY = touch.clientY - rect.top;
+
+          touchClone = item.cloneNode(true);
+          touchClone.classList.add('touch-dragging');
+          touchClone.style.width = rect.width + 'px';
+          touchClone.style.left = (touch.clientX - offsetX) + 'px';
+          touchClone.style.top = (touch.clientY - offsetY) + 'px';
+          document.body.appendChild(touchClone);
+        }, { passive: false });
+
+        item.addEventListener('touchmove', (e) => {
+          if (!touchClone) return;
+          e.preventDefault();
+          const touch = e.touches[0];
+          touchClone.style.left = (touch.clientX - offsetX) + 'px';
+          touchClone.style.top = (touch.clientY - offsetY) + 'px';
+
+          touchClone.style.visibility = 'hidden';
+          const targetUnder = document.elementFromPoint(touch.clientX, touch.clientY);
+          touchClone.style.visibility = 'visible';
+
+          dropzones.forEach(zone => {
+            if (targetUnder && (zone.contains(targetUnder) || zone === targetUnder)) {
+              zone.classList.add('dragover');
+            } else {
+              zone.classList.remove('dragover');
+            }
+          });
+        }, { passive: false });
+
+        item.addEventListener('touchend', (e) => {
+          if (!touchClone) return;
+          const touch = e.changedTouches[0];
+          touchClone.style.visibility = 'hidden';
+          const targetUnder = document.elementFromPoint(touch.clientX, touch.clientY);
+          touchClone.remove();
+          touchClone = null;
+
+          dropzones.forEach(zone => zone.classList.remove('dragover'));
+
+          let droppedZone = null;
+          dropzones.forEach(zone => {
+            if (targetUnder && (zone.contains(targetUnder) || zone === targetUnder)) {
+              droppedZone = zone;
+            }
+          });
+
+          if (droppedZone && touchElement) {
+            droppedZone.appendChild(touchElement);
+            touchElement.classList.remove('selected');
+            selectedDndItem = null;
+          } else if (targetUnder && (sourcePool.contains(targetUnder) || sourcePool === targetUnder)) {
+            sourcePool.appendChild(touchElement);
+            touchElement.classList.remove('selected');
+            selectedDndItem = null;
+          }
+          touchElement = null;
+        });
+      });
+
+      dropzones.forEach(zone => {
+        zone.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          zone.classList.add('dragover');
+        });
+
+        zone.addEventListener('dragleave', () => {
+          zone.classList.remove('dragover');
+        });
+
+        zone.addEventListener('drop', (e) => {
+          e.preventDefault();
+          zone.classList.remove('dragover');
+          const id = e.dataTransfer.getData('text/plain');
+          const el = document.getElementById(id);
+          if (el) {
+            zone.appendChild(el);
+            if (selectedDndItem) {
+              selectedDndItem.classList.remove('selected');
+              selectedDndItem = null;
+            }
+          }
+        });
+
+        zone.addEventListener('click', () => {
+          if (selectedDndItem) {
+            zone.appendChild(selectedDndItem);
+            selectedDndItem.classList.remove('selected');
+            selectedDndItem = null;
+          }
+        });
+      });
+
+      sourcePool.addEventListener('click', () => {
+        if (selectedDndItem) {
+          sourcePool.appendChild(selectedDndItem);
+          selectedDndItem.classList.remove('selected');
+          selectedDndItem = null;
+        }
+      });
+    }
+
+    function initAdminFeatures() {
+      const openBtn = document.getElementById('open-admin-btn');
+      const passModal = document.getElementById('password-modal');
+      const passInput = document.getElementById('admin-pass-input');
+      const passErr = document.getElementById('pass-err');
+      const confirmPassBtn = document.getElementById('btn-confirm-pass');
+      const cancelPassBtn = document.getElementById('btn-cancel-pass');
+
+      const adminModal = document.getElementById('admin-modal');
+      const closeAdminBtn = document.getElementById('btn-close-admin');
+      const saveAdminBtn = document.getElementById('btn-save-config');
+      const adminAlert = document.getElementById('admin-alert');
+      const adminAlertText = document.getElementById('admin-alert-text');
+      const adminSuccessToast = document.getElementById('admin-success-toast');
+
+      openBtn.addEventListener('click', () => {
+        passInput.value = "";
+        passErr.style.display = 'none';
+        passModal.style.display = 'flex';
+        passInput.focus();
+      });
+
+      cancelPassBtn.addEventListener('click', () => {
+        passModal.style.display = 'none';
+      });
+
+      function handlePasswordSubmit() {
+        if (passInput.value === '1230') {
+          passModal.style.display = 'none';
+          loadConfigToAdminForm();
+          adminModal.style.display = 'flex';
+        } else {
+          passErr.style.display = 'block';
+        }
+      }
+
+      confirmPassBtn.addEventListener('click', handlePasswordSubmit);
+      passInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handlePasswordSubmit();
+      });
+
+      closeAdminBtn.addEventListener('click', () => {
+        adminModal.style.display = 'none';
+      });
+
+      function loadConfigToAdminForm() {
+        document.getElementById('cfg-subject').value = appConfig.subject;
+        document.getElementById('cfg-grade').value = appConfig.grade;
+        document.getElementById('cfg-title').value = appConfig.lessonTitle;
+        document.getElementById('cfg-total-score').value = appConfig.totalScore;
+        document.getElementById('cfg-sheet-url').value = appConfig.sheetScriptUrl || '';
+
+        document.getElementById('cfg-enable-mcq').checked = appConfig.sections.mcq.enabled;
+        document.getElementById('cfg-pts-mcq').value = appConfig.sections.mcq.score;
+
+        document.getElementById('cfg-enable-fill').checked = appConfig.sections.fill.enabled;
+        document.getElementById('cfg-pts-fill').value = appConfig.sections.fill.score;
+
+        document.getElementById('cfg-enable-tf').checked = appConfig.sections.tf.enabled;
+        document.getElementById('cfg-pts-tf').value = appConfig.sections.tf.score;
+
+        document.getElementById('cfg-enable-match').checked = appConfig.sections.match.enabled;
+        document.getElementById('cfg-pts-match').value = appConfig.sections.match.score;
+
+        document.getElementById('cfg-enable-dnd').checked = appConfig.sections.dnd.enabled;
+        document.getElementById('cfg-pts-dnd').value = appConfig.sections.dnd.score;
+
+        document.getElementById('cfg-enable-video').checked = appConfig.sections.video.enabled;
+        document.getElementById('cfg-pts-video').value = appConfig.sections.video.score;
+
+        document.getElementById('cfg-video1-url').value = appConfig.video1Url || '';
+        document.getElementById('cfg-video2-url').value = appConfig.video2Url || '';
+        adminAlert.style.display = 'none';
+        adminSuccessToast.style.display = 'none';
+      }
+
+      saveAdminBtn.addEventListener('click', () => {
+        const total = parseFloat(document.getElementById('cfg-total-score').value) || 0;
+        
+        let sumPoints = 0;
+        if (document.getElementById('cfg-enable-mcq').checked) sumPoints += parseFloat(document.getElementById('cfg-pts-mcq').value) || 0;
+        if (document.getElementById('cfg-enable-fill').checked) sumPoints += parseFloat(document.getElementById('cfg-pts-fill').value) || 0;
+        if (document.getElementById('cfg-enable-tf').checked) sumPoints += parseFloat(document.getElementById('cfg-pts-tf').value) || 0;
+        if (document.getElementById('cfg-enable-match').checked) sumPoints += parseFloat(document.getElementById('cfg-pts-match').value) || 0;
+        if (document.getElementById('cfg-enable-dnd').checked) sumPoints += parseFloat(document.getElementById('cfg-pts-dnd').value) || 0;
+        if (document.getElementById('cfg-enable-video').checked) sumPoints += parseFloat(document.getElementById('cfg-pts-video').value) || 0;
+
+        sumPoints = Math.round(sumPoints * 100) / 100;
+
+        if (Math.abs(sumPoints - total) > 0.001) {
+          adminAlertText.innerText = `LƯU Ý: Tổng điểm các phần (${sumPoints} đ) không bằng Tổng điểm toàn phiếu (${total} đ)! Vui lòng điều chỉnh lại.`;
+          adminAlert.style.display = 'flex';
+          adminSuccessToast.style.display = 'none';
+          return;
+        }
+
+        appConfig.subject = document.getElementById('cfg-subject').value.trim();
+        appConfig.grade = document.getElementById('cfg-grade').value.trim();
+        appConfig.lessonTitle = document.getElementById('cfg-title').value.trim();
+        appConfig.totalScore = total;
+        appConfig.sheetScriptUrl = document.getElementById('cfg-sheet-url').value.trim();
+
+        appConfig.sections.mcq.enabled = document.getElementById('cfg-enable-mcq').checked;
+        appConfig.sections.mcq.score = parseFloat(document.getElementById('cfg-pts-mcq').value) || 0;
+
+        appConfig.sections.fill.enabled = document.getElementById('cfg-enable-fill').checked;
+        appConfig.sections.fill.score = parseFloat(document.getElementById('cfg-pts-fill').value) || 0;
+
+        appConfig.sections.tf.enabled = document.getElementById('cfg-enable-tf').checked;
+        appConfig.sections.tf.score = parseFloat(document.getElementById('cfg-pts-tf').value) || 0;
+
+        appConfig.sections.match.enabled = document.getElementById('cfg-enable-match').checked;
+        appConfig.sections.match.score = parseFloat(document.getElementById('cfg-pts-match').value) || 0;
+
+        appConfig.sections.dnd.enabled = document.getElementById('cfg-enable-dnd').checked;
+        appConfig.sections.dnd.score = parseFloat(document.getElementById('cfg-pts-dnd').value) || 0;
+
+        appConfig.sections.video.enabled = document.getElementById('cfg-enable-video').checked;
+        appConfig.sections.video.score = parseFloat(document.getElementById('cfg-pts-video').value) || 0;
+
+        const customUrl1 = document.getElementById('cfg-video1-url').value.trim();
+        if (customUrl1) appConfig.video1Url = customUrl1;
+
+        const customUrl2 = document.getElementById('cfg-video2-url').value.trim();
+        if (customUrl2) appConfig.video2Url = customUrl2;
+
+        try {
+          localStorage.setItem('PHT_CONFIG', JSON.stringify(appConfig));
+        } catch (e) {
+          console.warn("Lưu localStorage:", e);
+        }
+
+        applyConfigToUI();
+
+        adminAlert.style.display = 'none';
+        adminSuccessToast.style.display = 'flex';
+
+        showToast("✓ Đã lưu cấu hình và áp dụng thành công lên phiếu học tập!");
+
+        setTimeout(() => {
+          adminModal.style.display = 'none';
+        }, 700);
+      });
+
+      // Nạp video 1 từ tệp máy tính và gọi video.load() ngay tức thì
+      document.getElementById('cfg-video1-file').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          const localUrl = URL.createObjectURL(file);
+          appConfig.video1Url = localUrl;
+          document.getElementById('cfg-video1-url').value = file.name;
+          const poster1 = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'><rect width='640' height='360' fill='%231e293b'/><circle cx='320' cy='180' r='38' fill='%237c3aed'/><polygon points='310,165 338,180 310,195' fill='%23ffffff'/><text x='320' y='250' font-size='18' text-anchor='middle' fill='%23ffffff' font-family='sans-serif'>Thí nghiệm 1: Hồ tinh bột + Dung dịch Iodine</text></svg>";
+          renderVideoPlayer('video-wrapper-1', localUrl, poster1);
+          showToast(`Đã nạp video 1: ${file.name}`);
+        }
+      });
+
+      // Nạp video 2 từ tệp máy tính và gọi video.load() ngay tức thì
+      document.getElementById('cfg-video2-file').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          const localUrl = URL.createObjectURL(file);
+          appConfig.video2Url = localUrl;
+          document.getElementById('cfg-video2-url').value = file.name;
+          const poster2 = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'><rect width='640' height='360' fill='%231e293b'/><circle cx='320' cy='180' r='38' fill='%23ea580c'/><polygon points='310,165 338,180 310,195' fill='%23ffffff'/><text x='320' y='250' font-size='18' text-anchor='middle' fill='%23ffffff' font-family='sans-serif'>Thí nghiệm 2: Phản ứng thuỷ phân Tinh bột</text></svg>";
+          renderVideoPlayer('video-wrapper-2', localUrl, poster2);
+          showToast(`Đã nạp video 2: ${file.name}`);
+        }
+      });
+
+      document.getElementById('cfg-img-cotton').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          compressAndStoreImage(file, 'cotton', (dataUrl) => {
+            document.getElementById('img-cotton').src = dataUrl;
+            showToast("Đã cập nhật ảnh Sợi bông nõn thành công!");
+          });
+        }
+      });
+
+      document.getElementById('cfg-img-rice').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          compressAndStoreImage(file, 'rice', (dataUrl) => {
+            document.getElementById('img-rice').src = dataUrl;
+            showToast("Đã cập nhật ảnh Hạt gạo thành công!");
+          });
+        }
+      });
+
+      document.getElementById('cfg-img-helix').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          compressAndStoreImage(file, 'helix', (dataUrl) => {
+            document.getElementById('img-helix').src = dataUrl;
+            showToast("Đã cập nhật ảnh Phức màu Iodine thành công!");
+          });
+        }
+      });
+    }
+
+    function gradeAssignment() {
+      const studentName = document.getElementById('student-name').value.trim();
+      const studentClass = document.getElementById('student-class').value.trim();
+
+      if (!studentName || !studentClass) {
+        showToast("Vui lòng điền đầy đủ Họ và tên cùng Lớp trước khi nộp bài!", true);
+        document.getElementById('student-name').focus();
+        return;
+      }
+
+      let totalEarnedScore = 0;
+      let totalQuestions = 0;
+      let totalCorrect = 0;
+      let totalIncorrect = 0;
+      let totalUnanswered = 0;
+
+      const breakdownDetails = [];
+
+      // 1. Chấm Trắc nghiệm
+      if (appConfig.sections.mcq.enabled) {
+        const mcqItems = document.querySelectorAll('#sec-mcq .q-item');
+        let mcqCorrect = 0;
+        let mcqCount = mcqItems.length;
+
+        mcqItems.forEach((item, idx) => {
+          totalQuestions++;
+          const correctVal = item.getAttribute('data-correct');
+          const checked = item.querySelector(`input[name="mcq-${idx}"]:checked`);
+          const fb = item.querySelector('.result-feedback');
+          fb.style.display = 'block';
+
+          if (!checked) {
+            totalUnanswered++;
+            fb.className = 'result-feedback is-incorrect';
+            fb.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Chưa làm! Đáp án đúng: <strong>${correctVal}</strong>`;
+          } else if (checked.value === correctVal) {
+            totalCorrect++;
+            mcqCorrect++;
+            fb.className = 'result-feedback is-correct';
+            fb.innerHTML = `<i class="fa-solid fa-circle-check"></i> Chính xác!`;
+          } else {
+            totalIncorrect++;
+            fb.className = 'result-feedback is-incorrect';
+            fb.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Sai! Đáp án đúng: <strong>${correctVal}</strong>`;
+          }
+        });
+
+        const earned = mcqCount > 0 ? (mcqCorrect / mcqCount) * appConfig.sections.mcq.score : 0;
+        totalEarnedScore += earned;
+        breakdownDetails.push({ name: "Khu vực 1: Trắc nghiệm", correct: mcqCorrect, total: mcqCount, earned: earned, max: appConfig.sections.mcq.score });
+      }
+
+      // 2. Chấm Điền khuyết
+      if (appConfig.sections.fill.enabled) {
+        const fillItems = document.querySelectorAll('#sec-fill .fill-sentence');
+        let fillCorrect = 0;
+        let fillCount = fillItems.length;
+
+        fillItems.forEach(item => {
+          totalQuestions++;
+          const ans = item.getAttribute('data-ans');
+          const sel = item.querySelector('.fill-select');
+          const fb = item.querySelector('.result-feedback');
+          fb.style.display = 'block';
+
+          if (!sel.value) {
+            totalUnanswered++;
+            fb.className = 'result-feedback is-incorrect';
+            fb.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Chưa làm!`;
+          } else if (sel.value === ans) {
+            totalCorrect++;
+            fillCorrect++;
+            fb.className = 'result-feedback is-correct';
+            fb.innerHTML = `<i class="fa-solid fa-circle-check"></i> Chính xác!`;
+          } else {
+            totalIncorrect++;
+            fb.className = 'result-feedback is-incorrect';
+            fb.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Chưa đúng!`;
+          }
+        });
+
+        const earned = fillCount > 0 ? (fillCorrect / fillCount) * appConfig.sections.fill.score : 0;
+        totalEarnedScore += earned;
+        breakdownDetails.push({ name: "Khu vực 2: Điền khuyết", correct: fillCorrect, total: fillCount, earned: earned, max: appConfig.sections.fill.score });
+      }
+
+      // 3. Chấm Đúng / Sai
+      if (appConfig.sections.tf.enabled) {
+        const tfRows = document.querySelectorAll('#sec-tf .tf-row');
+        let tfCorrect = 0;
+        let tfCount = tfRows.length;
+
+        tfRows.forEach((row, idx) => {
+          totalQuestions++;
+          const correct = row.getAttribute('data-correct');
+          const checked = row.querySelector(`input[name="tf-${idx}"]:checked`);
+
+          if (!checked) {
+            totalUnanswered++;
+            row.style.backgroundColor = '#fef2f2';
+          } else if (checked.value === correct) {
+            totalCorrect++;
+            tfCorrect++;
+            row.style.backgroundColor = '#ecfdf5';
+          } else {
+            totalIncorrect++;
+            row.style.backgroundColor = '#fef2f2';
+          }
+        });
+
+        const earned = tfCount > 0 ? (tfCorrect / tfCount) * appConfig.sections.tf.score : 0;
+        totalEarnedScore += earned;
+        breakdownDetails.push({ name: "Khu vực 3: Đúng / Sai", correct: tfCorrect, total: tfCount, earned: earned, max: appConfig.sections.tf.score });
+      }
+
+      // 4. Chấm Nối cột
+      if (appConfig.sections.match.enabled) {
+        const matchRows = document.querySelectorAll('#sec-match .match-row');
+        let matchCorrect = 0;
+        let matchCount = matchRows.length;
+
+        matchRows.forEach(row => {
+          totalQuestions++;
+          const ans = row.getAttribute('data-ans');
+          const sel = row.querySelector('select');
+
+          if (!sel.value) {
+            totalUnanswered++;
+            row.style.backgroundColor = '#fef2f2';
+          } else if (sel.value === ans) {
+            totalCorrect++;
+            matchCorrect++;
+            row.style.backgroundColor = '#ecfdf5';
+          } else {
+            totalIncorrect++;
+            row.style.backgroundColor = '#fef2f2';
+          }
+        });
+
+        const earned = matchCount > 0 ? (matchCorrect / matchCount) * appConfig.sections.match.score : 0;
+        totalEarnedScore += earned;
+        breakdownDetails.push({ name: "Khu vực 4: Nối cột", correct: matchCorrect, total: matchCount, earned: earned, max: appConfig.sections.match.score });
+      }
+
+      // 5. Chấm Kéo thả
+      if (appConfig.sections.dnd.enabled) {
+        const dropzones = document.querySelectorAll('#sec-dnd .dropzone');
+        let dndCorrect = 0;
+        let dndCount = dropzones.length;
+
+        dropzones.forEach(zone => {
+          totalQuestions++;
+          const acceptId = zone.getAttribute('data-accept');
+          const childItem = zone.querySelector('.dnd-item');
+
+          if (!childItem) {
+            totalUnanswered++;
+            zone.style.borderColor = '#ef4444';
+            zone.style.backgroundColor = '#fef2f2';
+          } else if (childItem.getAttribute('data-match') === acceptId) {
+            totalCorrect++;
+            dndCorrect++;
+            zone.style.borderColor = '#10b981';
+            zone.style.backgroundColor = '#ecfdf5';
+          } else {
+            totalIncorrect++;
+            zone.style.borderColor = '#ef4444';
+            zone.style.backgroundColor = '#fef2f2';
+          }
+        });
+
+        const earned = dndCount > 0 ? (dndCorrect / dndCount) * appConfig.sections.dnd.score : 0;
+        totalEarnedScore += earned;
+        breakdownDetails.push({ name: "Khu vực 5: Kéo thả ảnh", correct: dndCorrect, total: dndCount, earned: earned, max: appConfig.sections.dnd.score });
+      }
+
+      // 6. Chấm Video + Điền khuyết
+      if (appConfig.sections.video.enabled) {
+        const vidItems = document.querySelectorAll('#sec-video .fill-sentence');
+        let vidCorrect = 0;
+        let vidCount = vidItems.length;
+
+        vidItems.forEach(item => {
+          totalQuestions++;
+          const ans = item.getAttribute('data-ans');
+          const sel = item.querySelector('.fill-select');
+          const fb = item.querySelector('.result-feedback');
+          fb.style.display = 'block';
+
+          if (!sel.value) {
+            totalUnanswered++;
+            fb.className = 'result-feedback is-incorrect';
+            fb.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Chưa chọn!`;
+          } else if (sel.value === ans) {
+            totalCorrect++;
+            vidCorrect++;
+            fb.className = 'result-feedback is-correct';
+            fb.innerHTML = `<i class="fa-solid fa-circle-check"></i> Đúng!`;
+          } else {
+            totalIncorrect++;
+            fb.className = 'result-feedback is-incorrect';
+            fb.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Chưa đúng!`;
+          }
+        });
+
+        const earned = vidCount > 0 ? (vidCorrect / vidCount) * appConfig.sections.video.score : 0;
+        totalEarnedScore += earned;
+        breakdownDetails.push({ name: "Khu vực 6: Video & Điền khuyết", correct: vidCorrect, total: vidCount, earned: earned, max: appConfig.sections.video.score });
+      }
+
+      totalEarnedScore = Math.round(totalEarnedScore * 100) / 100;
+
+      // Cập nhật Modal kết quả
+      document.getElementById('modal-score-val').innerText = totalEarnedScore;
+      document.getElementById('modal-score-max').innerText = `/ ${appConfig.totalScore} điểm`;
+      document.getElementById('modal-student-greeting').innerText = `Học sinh: ${studentName} - Lớp: ${studentClass}`;
+
+      let breakdownHtml = '';
+      breakdownDetails.forEach(b => {
+        breakdownHtml += `
+          <div class="summary-row">
+            <span>${b.name} (${b.correct}/${b.total} câu)</span>
+            <strong>${Math.round(b.earned * 100) / 100} / ${b.max} đ</strong>
+          </div>
+        `;
+      });
+      breakdownHtml += `
+        <div class="summary-row" style="margin-top: 6px; font-weight: 800; color: #1e3c72; border-top: 2px solid #cbd5e1; padding-top: 8px;">
+          <span>Tổng kết (Đúng ${totalCorrect} / Sai ${totalIncorrect} / Chưa làm ${totalUnanswered}):</span>
+          <span>${totalEarnedScore} điểm</span>
+        </div>
+      `;
+      document.getElementById('modal-breakdown').innerHTML = breakdownHtml;
+
+      document.getElementById('score-modal').style.display = 'flex';
+
+      const syncStatus = document.getElementById('modal-sync-status');
+      if (appConfig.sheetScriptUrl && appConfig.sheetScriptUrl.startsWith('http')) {
+        syncStatus.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Đang gửi kết quả về Google Sheets...`;
+
+        const payload = {
+          hoTen: studentName,
+          lop: studentClass,
+          diem: totalEarnedScore,
+          soCauDung: totalCorrect,
+          soCauSai: totalIncorrect,
+          soCauChuaLam: totalUnanswered,
+          tongSoCau: totalQuestions,
+          thoiGian: new Date().toLocaleString('vi-VN')
+        };
+
+        fetch(appConfig.sheetScriptUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+        .then(() => {
+          syncStatus.innerHTML = `<i class="fa-solid fa-cloud-arrow-up" style="color: #10b981;"></i> Đã lưu kết quả thành công vào Google Sheets!`;
+          syncStatus.style.background = '#ecfdf5';
+          syncStatus.style.color = '#065f46';
+          syncStatus.style.borderColor = '#86efac';
+        })
+        .catch(err => {
+          console.warn('Lỗi gửi Sheets:', err);
+          syncStatus.innerHTML = `<i class="fa-solid fa-triangle-exclamation" style="color: #f59e0b;"></i> Đã hoàn thành bài làm (Không gửi được Sheets).`;
+        });
+      } else {
+        syncStatus.innerHTML = `<i class="fa-solid fa-info-circle"></i> Chưa cấu hình link Google Sheets trong Quản trị.`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      applyConfigToUI();
+      initDragAndDrop();
+      initAdminFeatures();
+
+      document.getElementById('btn-submit').addEventListener('click', gradeAssignment);
+      document.getElementById('btn-close-score').addEventListener('click', () => {
+        document.getElementById('score-modal').style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
